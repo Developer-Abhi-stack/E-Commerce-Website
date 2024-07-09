@@ -34,7 +34,7 @@ const Admin = () => {
             <button className="relative">
               <img className="w-10 h-10 rounded-full" src="./images/avt.png" onClick={()=> setAccountMenu(!accountMenu)} />
               {accountMenu && (
-                <div className="absolute top-18 right-0 p-5 bg-white shadow-lg ">
+                <div className="absolute top-18 right-0 p-5 bg-white shadow-2xl rounded-md ">
                   <div>
                     <h1 className="text-lg font-semibold">Er. Abhishek</h1>
                     <p className="text-gray-500">abhikum8131@gmail.com</p>
