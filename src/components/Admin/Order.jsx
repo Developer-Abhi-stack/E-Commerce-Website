@@ -123,7 +123,7 @@ const Order = () => {
       <div className="mt-6"> {/* Container for the table */}
         <table className="w-full"> {/* Define a full-width table */}
           <thead>
-            <tr className="bg-red-500 text-white"> {/* Table header row with red background and white text */}
+            <tr className="bg-rose-600 text-white"> {/* Table header row with red background and white text */}
               <th className="py-4">Order Id</th>
               <th>Customer&apos;s Name</th>
               <th>Email</th>
