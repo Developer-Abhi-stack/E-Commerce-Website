@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-const Admin = () => {
+// eslint-disable-next-line react/prop-types
+const Layout = ({children}) => {
   // State to manage the width of the sidebar
   const [size, setSize] = useState(280);
   // State to manage the visibility of the account menu
@@ -26,7 +27,7 @@ const Admin = () => {
         }}
       >
         {/* Navigation bar */}
-        <nav className="bg-white p-6 shadow flex items-center justify-between">
+        <nav className="bg-white p-6 shadow flex items-center justify-between sticky top-0 left-0">
           <div className="flex gap-4 items-center">
             {/* Sidebar toggle button */}
             <button
@@ -41,7 +42,7 @@ const Admin = () => {
           <div>
             {/* Account menu button */}
             <button className="relative">
-              <img className="w-10 h-10 rounded-full" src="./images/avt.png" onClick={() => setAccountMenu(!accountMenu)} />
+              <img className="w-10 h-10 rounded-full" src="/images/avt.png" onClick={() => setAccountMenu(!accountMenu)} />
               {/* Account menu */}
               {accountMenu && (
                 <div className="absolute top-18 right-0 p-5 bg-white shadow-2xl rounded-md">
@@ -59,9 +60,10 @@ const Admin = () => {
             </button>
           </div>
         </nav>
+        <div className="p-6">{children}</div>
       </section>
     </div>
   );
 };
 
-export default Admin;
+export default Layout;
