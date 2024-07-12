@@ -17,6 +17,11 @@ const Layout = ({ children }) => {
       path: "/admin/dashboard",
     },
     {
+      label: "Customers",
+      icon: <i className="ri-user-line mr-2"></i>,
+      path: "/admin/customers",
+    },
+    {
       label: "Products",
       icon: <i className="ri-shopping-cart-line mr-2"></i>,
       path: "/admin/products",
@@ -35,12 +40,7 @@ const Layout = ({ children }) => {
       label: "Settings",
       icon: <i className="ri-settings-4-line mr-2"></i>,
       path: "/admin/settings",
-    },
-    {
-      label: "Logout",
-      icon: <i className="ri-logout-circle-r-line mr-2"></i>,
-      path: "/admin/logout",
-    },
+    }
   ];
 
   // Hook to get the current location object
@@ -79,6 +79,10 @@ const Layout = ({ children }) => {
                 </Link>
               ))
             }
+            <button  className="text-gray-50 text-left text-[17.5px] p-4 hover:bg-rose-600 hover:text-white">
+              <i className="ri-logout-circle-r-line mr-2"></i>
+                Logout
+              </button>
           </div>
         </aside>
 
@@ -167,6 +171,10 @@ const Layout = ({ children }) => {
                 </Link>
               ))
             }
+            <button  className="text-gray-50 text-left text-[17.5px] p-4 hover:bg-rose-600 hover:text-white">
+              <i className="ri-logout-circle-r-line mr-2"></i>
+                Logout
+              </button>
           </div>
         </aside>
 
@@ -210,6 +218,7 @@ const Layout = ({ children }) => {
                   </div>
                 )}
               </button>
+              
             </div>
           </nav>
           {/* Content passed as children */}

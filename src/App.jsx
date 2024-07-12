@@ -8,6 +8,10 @@ import NotFound from './components/NotFound';
 import Product from './components/Admin/Product';
 // Import the Order component from the Admin directory
 import Order from './components/Admin/Order';
+import Dashboard from './components/Admin/Dashboard';
+import Customers from './components/Admin/Customers';
+import Payments from './components/Admin/Payments';
+import Settings from './components/Admin/Settings';
 
 // Define the main App component
 const App = () => {
@@ -22,9 +26,18 @@ const App = () => {
           <Route path='products' element={<Product />} />
           {/* Route for the orders page under admin */}
           <Route path='orders' element={<Order />} />
+          {/* Route for the dashboard page under admin */}
+          <Route path='dashboard' element={<Dashboard />} />
+          {/* Route for the customers page under admin */}
+          <Route path='customers' element={<Customers />} />
+          {/* Route for the payments page under admin */}
+          <Route path='payments' element={<Payments />} />
+          {/* Route for the settings page under admin */}
+          <Route path='settings' element={<Settings />} />
         </Route>
         {/* Fallback route for any undefined paths, rendering the NotFound component */}
         <Route path='*' element={<NotFound />} />
+
       </Routes>
     </BrowserRouter>
   );
