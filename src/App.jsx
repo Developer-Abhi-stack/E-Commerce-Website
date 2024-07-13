@@ -5,13 +5,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // Import the NotFound component
 import NotFound from './components/NotFound';
 // Import the Product component from the Admin directory
-import Product from './components/Admin/Product';
+import Products from './components/Admin/Products';
 // Import the Order component from the Admin directory
 import Order from './components/Admin/Order';
 import Dashboard from './components/Admin/Dashboard';
 import Customers from './components/Admin/Customers';
 import Payments from './components/Admin/Payments';
 import Settings from './components/Admin/Settings';
+import Admin from './components/Admin';
 
 // Define the main App component
 const App = () => {
@@ -23,7 +24,7 @@ const App = () => {
         {/* Define a nested route for the admin section */}
         <Route path='/admin'>
           {/* Route for the products page under admin */}
-          <Route path='products' element={<Product />} />
+          <Route path='products' element={<Products />} />
           {/* Route for the orders page under admin */}
           <Route path='orders' element={<Order />} />
           {/* Route for the dashboard page under admin */}
@@ -34,6 +35,8 @@ const App = () => {
           <Route path='payments' element={<Payments />} />
           {/* Route for the settings page under admin */}
           <Route path='settings' element={<Settings />} />
+          {/* Route for the admin page */}
+          <Route path='auth' element={<Admin />} />
         </Route>
         {/* Fallback route for any undefined paths, rendering the NotFound component */}
         <Route path='*' element={<NotFound />} />

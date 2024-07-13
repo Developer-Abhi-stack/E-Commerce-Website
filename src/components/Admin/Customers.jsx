@@ -58,7 +58,7 @@ const Customers = () => {
       {" "}
       {/* Render the Layout component */}
       <div>
-        <h1 className="text-xl font-semibold">Customers</h1>{" "}
+        <h1 className="text-xl font-semibold">Customers</h1>
         {/* Heading for the orders table */}
         <div className="mt-6">
           {" "}
