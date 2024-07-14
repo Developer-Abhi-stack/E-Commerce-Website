@@ -13,6 +13,7 @@ import Customers from './components/Admin/Customers';
 import Payments from './components/Admin/Payments';
 import Settings from './components/Admin/Settings';
 import Admin from './components/Admin';
+import Home from './components/Home';
 
 // Define the main App component
 const App = () => {
@@ -21,6 +22,8 @@ const App = () => {
     <BrowserRouter>
       {/* Define the Routes for the application */}
       <Routes>
+        {/* Define the route for the home page */}
+        <Route path="/" element={<Home />} />
         {/* Define a nested route for the admin section */}
         <Route path='/admin'>
           {/* Route for the products page under admin */}
