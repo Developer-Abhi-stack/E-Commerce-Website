@@ -79,10 +79,10 @@ const Layout = ({ children }) => {
                 </Link>
               ))
             }
-            <button  className="text-gray-50 text-left text-[17.5px] p-4 hover:bg-rose-600 hover:text-white">
+            <button className="text-gray-50 text-left text-[17.5px] p-4 hover:bg-rose-600 hover:text-white">
               <i className="ri-logout-circle-r-line mr-2"></i>
-                Logout
-              </button>
+              Logout
+            </button>
           </div>
         </aside>
 
@@ -149,7 +149,7 @@ const Layout = ({ children }) => {
         >
           <div className="flex flex-col">
             <button className="text-left mx-4 mt-4"
-            onClick={() => setMobileSize(mobileSize === 0 ? 280 : 0)}>
+              onClick={() => setMobileSize(mobileSize === 0 ? 280 : 0)}>
               <i className="ri-close-circle-line mr-2 text-white text-xl"></i>
             </button>
             {
@@ -171,10 +171,10 @@ const Layout = ({ children }) => {
                 </Link>
               ))
             }
-            <button  className="text-gray-50 text-left text-[17.5px] p-4 hover:bg-rose-600 hover:text-white">
+            <button className="text-gray-50 text-left text-[17.5px] p-4 hover:bg-rose-600 hover:text-white">
               <i className="ri-logout-circle-r-line mr-2"></i>
-                Logout
-              </button>
+              Logout
+            </button>
           </div>
         </aside>
 

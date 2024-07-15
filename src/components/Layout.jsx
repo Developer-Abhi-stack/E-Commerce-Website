@@ -1,30 +1,24 @@
 import { Link } from "react-router-dom";
 
+// Layout component to structure the webpage
 const Layout = ({ children }) => {
+  // Menu items for navigation
   const menus = [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "Products",
-      href: "/products",
-    },
-    {
-      label: "Category",
-      href: "/category",
-    },
-    {
-      label: "Contact Us",
-      href: "/contact-us",
-    },
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
+    { label: "Category", href: "/category" },
+    { label: "Contact Us", href: "/contact-us" },
   ];
+
   return (
     <div>
+      {/* Navigation bar */}
       <nav className="shadow-lg bg-slate-50 sticky top-0 left-0">
         <div className="w-10/12 mx-auto flex justify-between items-center">
-          <img src="/images/logo.png" className="w-20" />
+          {/* Logo */}
+          <img src="/images/logo.png" className="w-20" alt="Logo" />
           <ul className="flex gap-4 items-center">
+            {/* Mapping through menu items to create links */}
             {menus.map((item, index) => (
               <li key={index}>
                 <Link
@@ -35,6 +29,7 @@ const Layout = ({ children }) => {
                 </Link>
               </li>
             ))}
+            {/* Additional links for Login and Sign Up */}
             <Link
               className="hover:bg-blue-600 py-6 block text-center w-[100px] hover:text-white font-semibold"
               to="/login"
@@ -51,10 +46,13 @@ const Layout = ({ children }) => {
         </div>
       </nav>
 
+      {/* Main content */}
       <div>{children}</div>
 
+      {/* Footer section */}
       <footer className="bg-slate-100 py-16">
         <div className="mx-auto w-10/12 grid grid-cols-4 gap-3">
+          {/* Shop Details */}
           <div>
             <h1 className="text-3xl font-semibold mb-3">Shop Details</h1>
             <p className="text-gray-600 mb-6">
@@ -63,9 +61,10 @@ const Layout = ({ children }) => {
               sapiente non, aut nihil earum ut! Placeat doloribus praesentium
               assumenda obcaecati facere quo molestias ipsa.
             </p>
-            <img src="/images/logo.png" className="w-28" />
+            <img src="/images/logo.png" className="w-28" alt="Logo" />
           </div>
 
+          {/* Website Links */}
           <div>
             <h1 className="text-3xl font-semibold mb-3">Website Links</h1>
             <ul className="space-y-3 font-semibold text-gray-600">
@@ -78,11 +77,12 @@ const Layout = ({ children }) => {
                 <Link to="/login">Login</Link>
               </li>
               <li>
-                <Link to="/sigup">Sign Up</Link>
+                <Link to="/signup">Sign Up</Link>
               </li>
             </ul>
           </div>
 
+          {/* Social Media Links */}
           <div>
             <h1 className="text-3xl font-semibold mb-3">Follow Us</h1>
             <ul className="space-y-3 font-semibold text-gray-600">
@@ -101,11 +101,10 @@ const Layout = ({ children }) => {
               <li>
                 <Link to="/youtube">YouTube</Link>
               </li>
-              
             </ul>
           </div>
 
-
+          {/* Contact Us Form */}
           <div>
             <h1 className="text-3xl font-semibold mb-3">Contact Us</h1>
             <form className="w-full max-w-lg mx-auto">

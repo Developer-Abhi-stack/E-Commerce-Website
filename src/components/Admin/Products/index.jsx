@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "../Layout";
 
 const Products = () => {
+  // Initialize the state with an array of product objects
   const [products, setProducts] = useState([
     {
       title: "men&apos;s shirt slim blue",
@@ -154,16 +155,22 @@ const Products = () => {
   return (
     <Layout>
       <div>
+           {/* Page heading */}
         <h1 className="text-xl font-semibold mb-8">Customers</h1>
+        {/* Product grid */}
         <div className="grid md:grid-cols-4 gap-4">
           {products.map((item, index) => (
             <div key={index} className="bg-white rounded-md shadow-lg">
+              {/* Product image */}
               <img src={item.image} className="rounded-t-md " />
               <div className="p-4">
+                 {/* Product title */}
                 <h1 className="text-md font-semibold capitalize">
                   {item.title}
                 </h1>
+                {/* Product description */}
                 <p>{item.description.slice(0, 50)}</p>
+                 {/* Product price and discount */}
                 <div className="flex gap-2 mt-1">
                   <span>₹{item.price-(item.price*item.discount)/100}</span>
                   <del>₹{item.price}</del>
