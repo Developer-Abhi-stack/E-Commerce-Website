@@ -20,6 +20,8 @@ import Settings from './components/Admin/Settings';
 import Admin from './components/Admin';
 // Import the Home component for the home page
 import Home from './components/Home';
+// Import the Products component for the products page
+import Product from './components/Products';
 
 // Define the main App component
 const App = () => {
@@ -30,6 +32,7 @@ const App = () => {
       <Routes>
         {/* Define the route for the home page */}
         <Route path="/" element={<Home />} />
+        <Route path='/products' element={<Product />} />
         {/* Define a nested route for the admin section */}
         <Route path='/admin'>
           {/* Route for the products page under admin */}
