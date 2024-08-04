@@ -110,8 +110,12 @@ const Products = () => {
                       <del>₹{item.price}</del>
                       <span className="text-gray-600">({item.discount}%)</span>
                     </div>
-                    <button className="bg-green-500 py-2 w-full rounded text-white font-semibold">
+                    <button className="bg-green-500 py-2 w-full rounded text-white font-semibold mt-4">
                       Buy Now
+                    </button>
+                    <button className="bg-rose-500 py-2 w-full rounded text-white font-semibold mt-2">
+                    <i className="ri-shopping-cart-line mr-2"></i>
+                      Add to cart
                     </button>
                   </div>
                 </div>

@@ -2,6 +2,8 @@
 import 'remixicon/fonts/remixicon.css';
 // Import components from react-router-dom for routing
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import 'animate.css';
 // Import the NotFound component for handling 404 errors
 import NotFound from './components/NotFound';
 // Import the Product component from the Admin directory for managing products
@@ -24,6 +26,8 @@ import Home from './components/Home';
 import Product from './components/Products';
 // Import the Category component for the category page
 import Category from './components/Category';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 // Define the main App component
 const App = () => {
@@ -36,6 +40,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path='/products' element={<Product />} />
         <Route path='/category' element={<Category />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
         {/* Define a nested route for the admin section */}
         <Route path='/admin'>
           {/* Route for the products page under admin */}
