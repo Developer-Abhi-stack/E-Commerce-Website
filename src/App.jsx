@@ -22,6 +22,8 @@ import Admin from './components/Admin';
 import Home from './components/Home';
 // Import the Products component for the products page
 import Product from './components/Products';
+// Import the Category component for the category page
+import Category from './components/Category';
 
 // Define the main App component
 const App = () => {
@@ -33,6 +35,7 @@ const App = () => {
         {/* Define the route for the home page */}
         <Route path="/" element={<Home />} />
         <Route path='/products' element={<Product />} />
+        <Route path='/category' element={<Category />} />
         {/* Define a nested route for the admin section */}
         <Route path='/admin'>
           {/* Route for the products page under admin */}
