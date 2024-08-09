@@ -28,6 +28,7 @@ import Product from './components/Products';
 import Category from './components/Category';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Contact from './components/Contact';
 
 // Define the main App component
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
         <Route path='/category' element={<Category />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='contact-us' element={<Contact />} />
         {/* Define a nested route for the admin section */}
         <Route path='/admin'>
           {/* Route for the products page under admin */}
