@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import firebaseAppConfig from "../util/firebase.config";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+const auth = getAuth(firebaseAppConfig);
 
 // Layout component to structure the webpage
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(false);
+  const [session, setSession] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setSession(user);
+      } else {
+        setSession(null);
+      }
+    });
+  }, []);
   // Menu items for navigation
   const menus = [
     { label: "Home", href: "/" },
@@ -14,8 +29,8 @@ const Layout = ({ children }) => {
   ];
   const mobileLink = (href) => {
     navigate(href);
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   return (
     <div>
@@ -24,7 +39,7 @@ const Layout = ({ children }) => {
         <div className="w-10/12 mx-auto flex justify-between items-center">
           {/* Logo */}
           <img src="/images/logo.png" className="w-20" alt="Logo" />
-          <button className="md:hidden" onClick={()=> setOpen(!open)}>
+          <button className="md:hidden" onClick={() => setOpen(!open)}>
             <i className="ri-menu-3-fill text-3xl"></i>
           </button>
           <ul className="md:flex gap-4 items-center hidden">
@@ -39,19 +54,25 @@ const Layout = ({ children }) => {
                 </Link>
               </li>
             ))}
-            {/* Additional links for Login and Sign Up */}
-            <Link
-              className="hover:bg-blue-600 py-6 block text-center w-[100px] hover:text-white font-semibold"
-              to="/login"
-            >
-              Log in
-            </Link>
-            <Link
-              className="hover:bg-rose-500 block text-center bg-blue-600 py-2 px-5 rounded text-white font-semibold"
-              to="/signup"
-            >
-              Sign Up
-            </Link>
+            {session ? (
+              <h1 className="text-xl font-semibold">Hi, User</h1>
+            ) : (
+              <>
+                {/* Additional links for Login and Sign Up */}
+                <Link
+                  className="hover:bg-blue-600 py-6 block text-center w-[100px] hover:text-white font-semibold"
+                  to="/login"
+                >
+                  Log in
+                </Link>
+                <Link
+                  className="hover:bg-rose-500 block text-center bg-blue-600 py-2 px-5 rounded text-white font-semibold"
+                  to="/signup"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
           </ul>
         </div>
       </nav>
@@ -172,24 +193,26 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </footer>
-      
-        <aside className="md:hidden bg-slate-900 fixed shadow-lg top-0 left-0 h-full z-50 overflow-hidden"
+
+      <aside
+        className="md:hidden bg-slate-900 fixed shadow-lg top-0 left-0 h-full z-50 overflow-hidden"
         style={{
-          width: (open ? 250 : 0),
-          transition: '0.5s'
+          width: open ? 250 : 0,
+          transition: "0.5s",
         }}
-        >
-          <div className="flex flex-col p-8 gap-6">
-            {
-              menus.map((item, index)=> (
-                <button key={index} onClick={()=> mobileLink(item.href)} className="text-white">
-                  {item.label}
-                </button>
-              ))
-            }
-          </div>
-        </aside>
-     
+      >
+        <div className="flex flex-col p-8 gap-6">
+          {menus.map((item, index) => (
+            <button
+              key={index}
+              onClick={() => mobileLink(item.href)}
+              className="text-white"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      </aside>
     </div>
   );
 };
